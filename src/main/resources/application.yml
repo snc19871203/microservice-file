@@ -1,0 +1,27 @@
+server:
+  port: 8060 
+# 数据源配置
+spring:
+  application:
+    name: microservice-file
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  path: D://mylog     #默认spring.log
+  #level:
+   # com.java.service: warn    #指定包下的日志级别为warn，warn级别以下的日志不打印
+  #pattern:
+  #  console: -%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n
+   # file: -%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n
+  # %d{HH:mm:ss.SSS}——日志输出时间
+  # %thread——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
+  # %-5level——日志级别，并且使用5个字符靠左对齐
+  # %logger- ——日志输出者的名字
+  # %msg——日志消息
+  # %n——平台的换行符

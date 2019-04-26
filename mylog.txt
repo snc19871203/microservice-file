@@ -1,0 +1,56 @@
+2019-04-19 16:55:47.516  INFO 10172 --- [restartedMain] com.java.MicroserviceFileApplication     : Starting MicroserviceFileApplication on ADMIN-PC with PID 10172 (E:\springboot_workspace\microservice-file\target\classes started by Admin in E:\springboot_workspace\microservice-file)
+2019-04-19 16:55:47.517  INFO 10172 --- [restartedMain] com.java.MicroserviceFileApplication     : No active profile set, falling back to default profiles: default
+2019-04-19 16:55:47.876  INFO 10172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8060 (http)
+2019-04-19 16:55:47.877  INFO 10172 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-19 16:55:47.878  INFO 10172 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-19 16:55:47.919  INFO 10172 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-19 16:55:47.919  INFO 10172 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 399 ms
+2019-04-19 16:55:48.034  INFO 10172 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-19 16:55:48.061  WARN 10172 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-19 16:55:48.100  INFO 10172 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-19 16:55:48.123  INFO 10172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8060 (http) with context path ''
+2019-04-19 16:55:48.124  INFO 10172 --- [restartedMain] com.java.MicroserviceFileApplication     : Started MicroserviceFileApplication in 0.639 seconds (JVM running for 1544.355)
+2019-04-19 16:55:48.126  INFO 10172 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-19 16:55:54.391  INFO 10172 --- [http-nio-8060-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-19 16:55:54.392  INFO 10172 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-19 16:55:54.398  INFO 10172 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-04-19 16:55:54.408  INFO 10172 --- [http-nio-8060-exec-1] com.java.action.SysFileAction            : 插入数据开始
+2019-04-19 16:55:54.422  INFO 10172 --- [http-nio-8060-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-6} inited
+2019-04-19 16:55:54.446 ERROR 10172 --- [http-nio-8060-exec-1] com.java.action.SysFileAction            : 插入数据异常
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'upload_user_id' cannot be null
+### The error may exist in file [E:\springboot_workspace\microservice-file\target\classes\mapper\SysFileMapper.xml]
+### The error may involve com.java.dao.SysFileDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into t_sys_file (file_path,old_file_name,new_file_name,file_position,file_size,         upload_user_id,upload_date,operation_id,file_order) values (         ?,?,?,?,?,         ?,?,?,?         )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'upload_user_id' cannot be null
+; Column 'upload_user_id' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'upload_user_id' cannot be null
+2019-04-19 16:58:05.789  INFO 10172 --- [Thread-46] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-19 16:58:05.790  INFO 10172 --- [Thread-46] com.alibaba.druid.pool.DruidDataSource   : {dataSource-6} closed
+2019-04-19 16:58:06.147  INFO 10172 --- [restartedMain] com.java.MicroserviceFileApplication     : Starting MicroserviceFileApplication on ADMIN-PC with PID 10172 (E:\springboot_workspace\microservice-file\target\classes started by Admin in E:\springboot_workspace\microservice-file)
+2019-04-19 16:58:06.147  INFO 10172 --- [restartedMain] com.java.MicroserviceFileApplication     : No active profile set, falling back to default profiles: default
+2019-04-19 16:58:06.519  INFO 10172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8060 (http)
+2019-04-19 16:58:06.520  INFO 10172 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-19 16:58:06.521  INFO 10172 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-19 16:58:06.595  INFO 10172 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-19 16:58:06.595  INFO 10172 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 445 ms
+2019-04-19 16:58:06.709  INFO 10172 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-19 16:58:06.738  WARN 10172 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-19 16:58:06.786  INFO 10172 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-04-19 16:58:06.808  INFO 10172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8060 (http) with context path ''
+2019-04-19 16:58:06.808  INFO 10172 --- [restartedMain] com.java.MicroserviceFileApplication     : Started MicroserviceFileApplication in 0.69 seconds (JVM running for 1683.038)
+2019-04-19 16:58:06.810  INFO 10172 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-04-19 16:58:13.858  INFO 10172 --- [http-nio-8060-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-19 16:58:13.862  INFO 10172 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-19 16:58:13.875  INFO 10172 --- [http-nio-8060-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-04-19 16:58:13.887  INFO 10172 --- [http-nio-8060-exec-1] com.java.action.SysFileAction            : 插入数据开始
+2019-04-19 16:58:13.897  INFO 10172 --- [http-nio-8060-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-7} inited
+2019-04-19 16:58:13.907 ERROR 10172 --- [http-nio-8060-exec-1] com.java.action.SysFileAction            : 插入数据异常
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'upload_user_id' cannot be null
+### The error may exist in file [E:\springboot_workspace\microservice-file\target\classes\mapper\SysFileMapper.xml]
+### The error may involve com.java.dao.SysFileDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into t_sys_file (file_path,old_file_name,new_file_name,file_position,file_size,         upload_user_id,upload_date,operation_id,file_order) values (         ?,?,?,?,?,         ?,?,?,?         )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'upload_user_id' cannot be null
+; Column 'upload_user_id' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'upload_user_id' cannot be null
+2019-04-19 16:58:57.976  INFO 10172 --- [Thread-52] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-19 16:58:57.981  INFO 10172 --- [Thread-52] com.alibaba.druid.pool.DruidDataSource   : {dataSource-7} closed

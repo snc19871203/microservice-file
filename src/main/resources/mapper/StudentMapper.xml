@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.dao.StudentDao" >
+  <!-- 字段与实体的映射 -->
+  <resultMap id="StudentResultMap" type="com.java.entity.StudentEntity">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- 根据条件查询，全部 -->
+  <select id="getAll" resultMap="StudentResultMap">
+    select * from t_student
+  </select>
+
+</mapper>
