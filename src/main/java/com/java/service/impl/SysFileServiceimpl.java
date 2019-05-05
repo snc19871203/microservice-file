@@ -6,6 +6,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,12 +16,14 @@ import com.java.entity.SysFileObj;
 import com.java.service.SysFileService;
 
 @Service
+//@CacheConfig(cacheNames="file")
 public class SysFileServiceimpl implements SysFileService {
 	private static Logger log = LoggerFactory.getLogger(SysFileServiceimpl.class);
 	@Autowired
 	private SysFileDao sysFileDao;
 	
 	@Override
+	@Cacheable(cacheNames="getfile")
 	public List<SysFileObj> getAll(Map<String, Object> map) {
 		return sysFileDao.getAll(map);
 	}

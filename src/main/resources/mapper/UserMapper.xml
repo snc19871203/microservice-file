@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.dao.UserDao" >
+	<!-- 字段与实体的映射 -->
+	<resultMap id="UserResultMap" type="com.java.entity.UserObj">
+		<id column="user_id" property="userId" jdbcType="INTEGER" />
+		<result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+		<result column="USER_PASS" property="userPass" jdbcType="VARCHAR" />
+		<result column="PHONE" property="phone" jdbcType="VARCHAR" />
+		<result column="EMAIL" property="email" jdbcType="VARCHAR" />
+		<result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+		<result column="USER_STATUS" property="userStatus" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="conditions">
+	 	<trim prefix="WHERE" prefixOverrides="AND |OR ">
+		<if test="userName != '' and userName != null">
+	        t.USER_NAME = #{userName}
+	    </if>
+	    <if test="userPass != '' and userPass != null">
+	        and t.USER_PASS = #{userPass}
+	    </if>
+		</trim>
+	</sql>
+	<!-- 根据条件查询，全部 -->
+	<select id="getByMap" parameterType="Object" resultMap="UserResultMap">
+		select * from t_user t 
+		<include refid="conditions"/>
+	</select>
+
+</mapper>

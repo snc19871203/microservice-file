@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.java.entity.SysFileObj;
@@ -26,14 +25,24 @@ public class SysFileAction extends BaseAction{
 	private SysFileService sysFileService;
 	
 	@RequestMapping(value="/getAll",method=RequestMethod.GET)
-	public String getAll(HttpServletRequest request,HttpServletResponse response){
+	public Map<String,Object> getAll(HttpServletRequest request,HttpServletResponse response){
 		String uploadUserId = request.getParameter("uploadUserId");
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("uploadUserId", uploadUserId);
 		List<SysFileObj> list = sysFileService.getAll(map);
+		//return list;
 		return toJsonSuccess(list);
 	}
-	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	@RequestMapping(value="/getAll2",method=RequestMethod.GET)
+	public Map<String,Object> getAll2(HttpServletRequest request,HttpServletResponse response){
+		String uploadUserId = request.getParameter("uploadUserId");
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("uploadUserId", uploadUserId);
+		List<SysFileObj> list = sysFileService.getAll(map);
+		//return list;
+		return toJsonFailure();
+	}
+	/*@RequestMapping(value="/insert",method=RequestMethod.POST)
 	@ResponseBody
 	public String insert(HttpServletRequest request,HttpServletResponse response,
 			SysFileObj sysFileObj) {
@@ -50,6 +59,6 @@ public class SysFileAction extends BaseAction{
 		}
 		log.info("插入数据结束");
 		return toJsonSuccess(flag);
-	}
+	}*/
 
 }
